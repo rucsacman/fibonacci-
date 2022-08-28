@@ -1,6 +1,3 @@
-// Fibonacci.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include <chrono>
 
@@ -63,25 +60,14 @@ int64_t fibonacci_matrix(int n) {
 int main()
 {
     auto start = chrono::high_resolution_clock::now();
-    cout << " " << fib_memoized(7) << endl;
+    cout << " " << fib_memoized(60) << endl;
     auto stop = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::nanoseconds>(stop - start);
     cout <<"Duration with memoized: " << duration.count() << endl;
 
     start = chrono::high_resolution_clock::now();
-    cout << " " << fibonacci_matrix(7) << endl;
+    cout << " " << fibonacci_matrix(60) << endl;
     stop = chrono::high_resolution_clock::now();
     duration = chrono::duration_cast<chrono::nanoseconds>(stop - start);
     cout << "Duration vector matrix: " << duration.count() << endl;
-}   
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+}
